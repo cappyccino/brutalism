@@ -1,11 +1,12 @@
 import type {Node} from 'react';
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import HomePage from "./Components/HomePage";
 
 const App: () => Node = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle={'dark-content'} />
       <View style={styles.background}>
 
         <View style={styles.topBar}/>
