@@ -1,12 +1,15 @@
 import type {Node} from 'react';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-const BrutalButton = ({text}): Node => {
+const BrutalButton = ({text, onPress}): Node => {
   return (
-    <View style={styles.button}>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={onPress}
+    >
       <Text style={styles.buttonText}>{text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

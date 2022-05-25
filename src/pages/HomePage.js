@@ -1,7 +1,8 @@
 import type {Node} from 'react';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import BrutalButton from "./BrutalButton";
+import BrutalButton from "../components/BrutalButton";
+import pageStyle from "./Page.style";
 
 const TitleBox: () => Node = () => {
   return (
@@ -12,11 +13,14 @@ const TitleBox: () => Node = () => {
   );
 };
 
-const HomePage: () => Node = () => {
+const HomePage: () => Node = ({ navigation }) => {
   return (
-    <View style={styles.homepage}>
+    <View style={[pageStyle.background, styles.homepage]}>
       <TitleBox/>
-      <BrutalButton text={"Locations"}/>
+      <BrutalButton
+        text={"Locations"}
+        onPress={() => navigation.navigate('List')}
+      />
       <BrutalButton text={"scan QR"}/>
       <BrutalButton text={"what is this"}/>
     </View>
