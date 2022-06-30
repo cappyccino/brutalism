@@ -2,7 +2,9 @@ import type {Node} from 'react';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import BrutalButton from "../components/BrutalButton";
-import pageStyle from "./Page.style";
+import {PAGE} from "../styles/pages";
+import {COLORS} from "../styles/colors";
+import {ABOUT_PAGE} from "./navigation";
 
 const TitleBox: () => Node = () => {
   return (
@@ -13,16 +15,24 @@ const TitleBox: () => Node = () => {
   );
 };
 
-const HomePage: () => Node = ({ navigation }) => {
+const HomePage: () => Node = ({navigation}) => {
   return (
-    <View style={[pageStyle.background, styles.homepage]}>
-      <TitleBox/>
-      <BrutalButton
-        text={"Locations"}
-        onPress={() => navigation.navigate('List')}
-      />
-      <BrutalButton text={"scan QR"}/>
-      <BrutalButton text={"what is this"}/>
+    <View style={{flex: 1}}>
+      <View style={styles.topBar}/>
+
+      <View style={[PAGE.background, styles.homepage]}>
+        <TitleBox/>
+        <BrutalButton
+          text={"Locations"}
+        />
+        <BrutalButton
+          text={"scan QR"}
+        />
+        <BrutalButton
+          text={"what is this"}
+          onPress={() => navigation.navigate(ABOUT_PAGE.name)}
+        />
+      </View>
     </View>
   );
 };
@@ -33,8 +43,13 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
   },
+  topBar: {
+    backgroundColor: COLORS.black,
+    height: 4,
+    width: "100%",
+  },
   titleBox: {
-    borderColor: "#2D0404",
+    borderColor: COLORS.black,
     borderWidth: 4,
     width: "100%",
     alignItems: "center",
@@ -44,12 +59,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 48,
     fontWeight: "600",
-    color: "#2D0404",
+    color: COLORS.black,
   },
   subtitle: {
     fontSize: 32,
     fontWeight: "500",
-    color: "#2D0404",
+    color: COLORS.black,
   },
 });
 
