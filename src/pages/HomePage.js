@@ -6,34 +6,35 @@ import {PAGE} from "../styles/pages";
 import {COLORS} from "../styles/colors";
 import {ABOUT_PAGE} from "./navigation";
 
-const TitleBox: () => Node = () => {
-  return (
-    <View style={styles.titleBox}>
-      <Text style={styles.title}>Tour De Brutal</Text>
-      <Text style={styles.subtitle}>Berlin</Text>
-    </View>
-  );
-};
+const TitleBox = () =>
+  <View style={styles.titleBox}>
+    <Text style={styles.title}>Tour De Brutal</Text>
+    <Text style={styles.subtitle}>Berlin</Text>
+  </View>;
 
-const HomePage: () => Node = ({navigation}) => {
+const HomePage = ({navigation}) => {
   return (
-    <View style={{flex: 1}}>
+    <>
       <View style={styles.topBar}/>
 
       <View style={[PAGE.background, styles.homepage]}>
         <TitleBox/>
+
         <BrutalButton
           text={"Locations"}
+          // onPress={() => navigation.navigate(LOCATIONS_PAGE.name)}
         />
         <BrutalButton
           text={"scan QR"}
+          // onPress={() => navigation.navigate(SCAN_PAGE.name)}
         />
         <BrutalButton
           text={"what is this"}
           onPress={() => navigation.navigate(ABOUT_PAGE.name)}
         />
+
       </View>
-    </View>
+    </>
   );
 };
 
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     justifyContent: "center",
+    paddingTop: 0,
   },
   topBar: {
     backgroundColor: COLORS.black,

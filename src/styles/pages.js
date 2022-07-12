@@ -7,5 +7,6 @@ export const PAGE =  StyleSheet.create({
     backgroundColor: COLORS.pink,
     color: COLORS.black,
     alignItems: "center",
+    paddingTop: 150,
   },
-});
+})
