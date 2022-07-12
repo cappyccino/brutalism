@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     width: "100%",
     borderBottomColor: COLORS.black,
     borderBottomWidth: 2,
-    paddingTop: 40,
-    paddingBottom: 40,
+    paddingTop: 20,
+    paddingBottom: 20,
   },
   homeButton: {
     width: "20%",
