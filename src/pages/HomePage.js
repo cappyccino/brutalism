@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import BrutalButton from "../components/BrutalButton";
 import {PAGE} from "../styles/pages";
 import {COLORS} from "../styles/colors";
-import {ABOUT_PAGE} from "./navigation";
+import {ABOUT_PAGE, LOCATIONS_PAGE, SCAN_PAGE} from "./navigation";
 
 const TitleBox = () =>
   <View style={styles.titleBox}>
@@ -22,11 +22,11 @@ const HomePage = ({navigation}) => {
 
         <BrutalButton
           text={"Locations"}
-          // onPress={() => navigation.navigate(LOCATIONS_PAGE.name)}
+          onPress={() => navigation.navigate(LOCATIONS_PAGE.name)}
         />
         <BrutalButton
           text={"scan QR"}
-          // onPress={() => navigation.navigate(SCAN_PAGE.name)}
+          onPress={() => navigation.navigate(SCAN_PAGE.name)}
         />
         <BrutalButton
           text={"what is this"}

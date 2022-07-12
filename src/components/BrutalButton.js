@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   buttonText: {
     // fontFamily: "Encode Sans", // TODO
     textTransform: "uppercase",
-    fontSize: 42,
+    fontSize: 32,
     color: "#2D0404",
     fontWeight: "500",
   }

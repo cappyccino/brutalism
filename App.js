@@ -4,7 +4,7 @@ import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {COLORS} from "./src/styles/colors";
-import {HOME_PAGE, ABOUT_PAGE} from "./src/pages/navigation";
+import {HOME_PAGE, ABOUT_PAGE, LOCATIONS_PAGE, SCAN_PAGE} from "./src/pages/navigation";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +19,8 @@ const App: () => Node = () => {
             screenOptions={{headerShown: false}}
           >
             <Stack.Screen name={HOME_PAGE.name} component={HOME_PAGE.component}/>
+            <Stack.Screen name={LOCATIONS_PAGE.name} component={LOCATIONS_PAGE.component}/>
+            <Stack.Screen name={SCAN_PAGE.name} component={SCAN_PAGE.component}/>
             <Stack.Screen name={ABOUT_PAGE.name} component={ABOUT_PAGE.component}/>
 
           </Stack.Navigator>
